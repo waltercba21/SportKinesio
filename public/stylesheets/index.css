@@ -1,0 +1,517 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Work Sans', sans-serif;
+  transition: .3s linear;
+}
+
+body, html {
+  height: 100%;
+  margin: 0; 
+  padding: 0; 
+}
+
+/*background VIDEO*/
+
+#videoContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1; 
+}
+#videoContainer video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#videoContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Añade un fondo negro con 50% de transparencia */
+}
+#myVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/*TEXTO DEL VIDEO*/
+
+#videoText {
+  position: absolute; 
+  top: 30%; /* Este es el punto en el que el texto comenzará a moverse con el scroll */
+  left: 2%; /* Ajusta según sea necesario */
+  z-index: 1;
+  width: 70%; /* Asegura que #videoText ocupe la mayor parte del ancho de la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos hijos a la izquierda */
+}
+
+#firstPart, #lastPart {
+  color: white;
+  opacity: 0; /* Inicia el texto invisible */
+  animation: fadeIn 2s ease-in forwards; /* Aplica la animación a fadeIn */
+}
+
+#firstPart {
+  color: white; /* Cambia el color del primer texto a blanco */
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#lastPart {
+  color: #9FBD3C;
+  font-size: 2.5rem;
+  margin-left: 39%;
+  animation-delay: 1s; 
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*HEADER*/
+header {
+  position: fixed;
+  top: 0;
+  z-index: 20; 
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.icons-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* Distribuye el espacio de manera uniforme entre los enlaces */
+  flex: 1; /* Ocupa todo el espacio restante */
+  padding: 20px;
+  margin: 20px;
+}
+
+.icons-header a {
+  position: relative;
+  padding-left: 40px;
+  color: #f5f5ff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.5s ease;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.icons-header a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #9fbd3c;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.icons-header a:hover {
+  color: #9fbd3c;
+}
+
+.icons-header a:hover::before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/*Seccion NOSOTROS Y NUESTRO PROFESIONALES*/
+
+#doctorsSection {
+  position: relative;
+  width: 100%;
+  background-color: #f5f5f5; 
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+#doctorsSection h1{
+  margin-top: 60px;
+  color: #2a3c5d;
+}
+
+#doctorsSection::before {
+  content: "";
+  position: absolute;
+  top: -100px; 
+  width: 100%;
+  height: 220px;
+  background-color: #f5f5f5;
+  transform: skewY(-4.5deg);
+  transform-origin: top left;
+  z-index: -1 ;
+}
+#doctorsSection::after {
+  content: "";
+  position: absolute;
+  bottom: -100px; 
+  width: 100%;
+  height: 130px;
+  background-color: #f5f5f5;
+  transform: skewY(1deg);
+  transform-origin: bottom left;
+}
+
+.profesional {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  max-width: 300px; /* Ajusta según sea necesario */
+}
+
+.profesional img {
+  width: 100px; /* Ajusta según sea necesario */
+  height: 100px; /* Ajusta según sea necesario */
+  object-fit: cover;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  margin-bottom: 20px;
+}
+
+.profesional h2 {
+  margin-bottom: 10px;
+  color: #2a3c5d;
+}
+
+.profesional h3 {
+  margin-bottom: 10px;  
+  color: #777;
+  font-weight: normal;
+}
+
+.profesional p {
+  color: #666;
+}
+.contenedorProfesionales {
+  margin-top: 60px;
+  display: flex; 
+  justify-content: space-around; 
+  flex-wrap: wrap; 
+}
+
+
+
+/*Seccion de servicios*/
+
+.servicios-container {
+  position: relative;
+  z-index: 10;
+  margin-top: 120px;
+  background-color: #2a3c5d;
+  padding-bottom: 100px; 
+}
+.servicios-container::before {
+  content: "";
+  position: absolute;
+  top: -100px; 
+  width: 100%;
+  height: 220px;
+  background-color: #2a3c5d;
+  transform: skewY(-2deg);
+  transform-origin: top left;
+  z-index: -1 ;
+}
+.servicios-container h1 {
+  color: #f5f5f5;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.servicios-container .servicios {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr)); 
+  gap: 20px;
+  margin: 50px; /* Añadir margen a los lados */
+}
+
+.tarjeta-servicio {
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+.tarjeta-servicio h2 {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  text-align: center;
+  color: #2a3c5d;
+}
+.tarjeta-servicio .masInfo {
+  margin-top: auto; /* Empujar el botón hacia abajo */
+  display: flex;
+  justify-content: center; 
+}
+.tarjeta-servicio .masInfo a {
+  color: #f5f5f5; 
+  background-color: #2a3c5d; 
+  text-decoration: none;
+  margin-top: 40px;
+  padding: 10px 20px;
+  display: inline-block; 
+  border-radius: 20px; 
+  transition: background-color 0.3s ease; 
+}
+.tarjeta-servicio .masInfo a:hover {
+  background-color: #0056b3; 
+}
+
+.tarjeta-servicio img {
+  width:100%;
+  height: 200px; 
+  object-fit: cover;
+  border-radius: 10px;
+}
+.tarjeta-servicio .masInfo {
+  display: flex;
+  justify-content: center; 
+}
+.tarjeta-servicio ul {
+  margin: 0;
+  padding: 0 0 0 20px; /* Añadir padding a la izquierda */
+}
+
+/*Seccion de obras sociales*/
+.obras-sociales-container {
+  position: relative;
+  z-index: 10;
+  margin-top: 120px;
+  background-color: #f5f5f5;
+  padding-bottom: 100px; 
+}
+.obras-sociales-container::before {
+  content: "";
+  position: absolute;
+  top: -100px; 
+  width: 100%;
+  height: 220px;
+  background-color: #f5f5f5;
+  transform: skewY(-2deg);
+  transform-origin: top left;
+  z-index: -1 ;
+}
+
+.obras-sociales-container h1 {
+  color: #2a3c5d;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.obras-sociales {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.slick-next {
+  right: -25px; /* Cambia esto para mover el botón a la posición que prefieras */
+}
+.tarjeta-obra-social img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de su contenedor */
+  height: 200px; /* Establece una altura fija */
+  object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin recortarse */
+}
+.slick-center img {
+  transform: scale(1.1);
+}
+
+/*Seccion Footer*/
+#videoContainerFooter {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1; 
+}
+#videoTextFooter{
+  position: absolute; 
+  top: 30%; 
+  left: 2%; 
+  z-index: 1;
+  width: 70%; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+#mapContainer {
+  position: absolute;
+  top: 45%; /* Ajusta este valor para cambiar la posición vertical */
+  left: 3%; /* Ajusta este valor para cambiar la posición horizontal */
+  z-index: 2; /* Esto asegura que el contenedor del mapa esté por encima de otros elementos */
+  margin-right: 20px; /* Añade un margen a la derecha del contenedor del mapa */
+}
+#socialContainer {
+  position: absolute; 
+  top: 40%; /* Ajusta este valor para cambiar el margen superior */
+  right: 10%; /* Ajusta este valor para cambiar el margen derecho */
+  background-color: rgba(42, 60, 93, 0.7); /* El último valor es la opacidad (0.7 en este caso) */
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 2; 
+  overflow: auto;
+}
+.redes a:hover i {
+  transform: scale(1.5); /* Aumenta el tamaño del icono en un 20% al pasar el puntero por encima */
+  color: white; /* Cambia el color del icono a blanco al pasar el puntero por encima */
+}
+
+
+#socialContainer h4 {
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+
+#socialContainer a {
+  margin: 0 60px;
+}
+#socialLinks{
+  margin-bottom: 20px;
+}
+#socialContainer .redes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#socialContainer .facebook-icon {
+  color: #f5f5f5; 
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#socialContainer .instagram-icon {
+  color: #f5f5f5; 
+  font-size: 25px;
+  font-weight: bold;
+}
+#socialContainer .whatsapp-icon {
+  color: #f5f5f5;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#formContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+}
+#formContainer h4 {
+  white-space: nowrap; /* Evita que el título se divida en varias líneas */
+}
+
+
+#formContainer label {
+  margin: 10px 0 5px 0;
+  color: #f5f5f5;
+}
+#formContainer textarea {
+  height: 100px; /* Ajusta la altura del textarea */
+}
+
+#formContainer input[type="text"],
+#formContainer textarea {
+  display: block; /* Hace que los campos de entrada ocupen toda la línea */
+  margin: 10px auto; /* Centra los campos de entrada y añade un poco de espacio alrededor */
+  border-radius: 5px; /* Añade bordes redondeados */
+  border: 1px solid #ccc; /* Añade un borde delicado */
+  padding: 10px; /* Añade un poco de espacio dentro de los campos de entrada */
+}
+
+#formContainer input[type="submit"] {
+  background-color: #4CAF50; /* Cambia el color de fondo del botón */
+  color: white; /* Cambia el color del texto del botón */
+  border: none; /* Elimina el borde del botón */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón sobre el botón */
+  padding: 10px 20px; /* Añade un poco de espacio dentro del botón */
+  border-radius: 5px; /* Añade bordes redondeados al botón */
+}
+
+#formContainer input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+
+#primeraParte, #ultimaParte {
+  color: white;
+  opacity: 0; /* Inicia el texto invisible */
+  animation: fadeIn 2s ease-in forwards; /* Aplica la animación a fadeIn */
+}
+
+#primeraParte {
+  color: white; /* Cambia el color del primer texto a blanco */
+  opacity: 0; /* Inicia el texto invisible */
+  animation: fadeIn 2s ease-in forwards; /* Aplica la animación a fadeIn */
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#ultimaParte {
+  color: #9FBD3C;
+  font-size: 2rem;
+  margin-left: 39%;
+  opacity: 0; /* Inicia el texto invisible */
+  animation: fadeIn 2s ease-in forwards; /* Aplica la animación a fadeIn */
+  animation-delay: 1s; /* La animación comenzará 2 segundos después de que la página se haya cargado */
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
