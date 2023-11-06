@@ -365,6 +365,12 @@ header {
   height: 100vh;
   z-index: 1; 
 }
+#myVideoFooter{
+  position: absolute;
+  top: 60%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+}
 #videoTextFooter{
   position: absolute; 
   top: 30%; 
