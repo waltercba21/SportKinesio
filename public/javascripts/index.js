@@ -1,12 +1,3 @@
-// cambiar background del header al hacer scroll
-const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-if (window.scrollY > 500) {
-  header.style.backgroundColor = '#2a3c5d';
-} else {
-  header.style.backgroundColor = 'transparent';
-}
-});
 
 $(document).ready(function(){
   $('.obras-sociales').slick({
@@ -38,4 +29,19 @@ $(document).ready(function(){
       }
     ]
   });
+});
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  var nombre = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var obraSocial = document.getElementById('obraSocial').value;
+  var consulta = document.getElementById('query').value;
+
+  var mensaje = '*Nombre:* ' + nombre + '%0A' +
+                '*Email:* ' + email + '%0A' +
+                '*Obra Social:* ' + obraSocial + '%0A' +
+                '*Consulta:* ' + consulta;
+
+  window.open('https://wa.me/543513274715?text=' + mensaje);
 });
