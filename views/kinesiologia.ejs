@@ -4,12 +4,40 @@
      <%- include partials/head %> 
   </head>
   
-<body id="kinesiologia-body">
-  <header>
-    <%- include partials/header %>
-  </header>
+  <body id="kinesiologia-body">
+    <header>
+      <%- include partials/header %>
+    </header>
   
-
-</body>
-<script src="/javascripts/index.js"></script>
+    <div id="main-container">
+      <h1>Kinesiología y Fisioterapia</h1>
+  
+      <div class="carousel">
+        <div><img src="/images/kinesio2.jpg" alt="Imagen 2"></div>
+        <div><img src="/images/kinesio4.jpg" alt="Imagen 3"></div>
+        <div><img src="/images/kinesio5.jpg" alt="Imagen 4"></div>
+        <div><img src="/images/kinesio6.jpg" alt="Imagen 5"></div>
+        <div><img src="/images/kinesio7.jpg" alt="Imagen 6"></div>
+        <div><img src="/images/kinesio8.jpg" alt="Imagen 7"></div>
+        <div><img src="/images/kinesio13.jpeg" alt="Imagen 8"></div>
+      </div>
+  
+      <div class="text-container">
+        <p>"Somos una empresa familiar comprometida con su bienestar en el ámbito de la salud. Como hermanos, compartimos una profunda pasión por la kinesiología, la fisioterapia, la deportología y la osteopatía. Nuestro enfoque se basa en la dedicación, la responsabilidad y la honestidad, valores que consideramos fundamentales en el cuidado de la salud. En nuestro consultorio médico, trabajamos de manera colaborativa para ofrecer a nuestros pacientes un enfoque integral y personalizado para su bienestar. Pueden esperar de nosotros un trato cercano y profesional, orientado a resolver sus necesidades de salud de manera efectiva y compasiva. Estamos aquí para ayudarles a alcanzar sus objetivos de salud y bienestar, brindándoles el mejor cuidado posible."</p>
+      </div>
+    </div>
+    <script>
+     $(document).ready(function(){
+  $('.carousel').slick({
+    infinite: true,
+    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 2000, /* Ajusta la velocidad de reproducción automática */
+    arrows: false,
+    speed: 2000,
+    centerMode: true,
+  });
+});
+    </script>
+  </body>
 </html>
