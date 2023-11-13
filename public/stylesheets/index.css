@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', 'Work Sans', sans-serif;
+  font-family: 'Poppins', 'Work Sans', sans-serif;
   
 }
 html {
@@ -40,8 +40,8 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between; /* Distribuye el espacio de manera uniforme entre los enlaces */
-  flex: 1; /* Ocupa todo el espacio restante */
+  justify-content: space-between;
+  flex: 1; 
   padding: 20px;
   margin: 20px;
 }
@@ -83,6 +83,14 @@ header {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+.hamburger-menu {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #f5f5ff;
+  z-index: 101;
+}
 
 /*BACKGROUND VIDEO HEADER*/
 
@@ -114,6 +122,7 @@ header {
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: 0; 
+  
 }
 
 /*TEXTO DEL VIDEO HEADER*/
@@ -178,17 +187,7 @@ header {
   color: #2a3c5d;
 }
 
-#doctorsSection::before {
-  content: "";
-  position: absolute;
-  top: -100px; 
-  width: 100%;
-  height: 220px;
-  background-color: #f5f5f5;
-  transform: skewY(-4.5deg);
-  transform-origin: top left;
-  z-index: -1 ;
-}
+
 #doctorsSection::after {
   content: "";
   position: absolute;
@@ -368,14 +367,21 @@ header {
 #videoContainerFooter {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   z-index: 1; 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  flex-wrap: wrap; 
 }
 #myVideoFooter{
   position: absolute;
-  top: 80%;
-  left: 33%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
 }
 #videoTextFooter{
   position: relative; 
@@ -420,21 +426,21 @@ header {
 }
 
 #container-contacto {
-  position: absolute; 
-  top: 30%; 
-  left: 10%; 
   display: flex; 
   flex-direction: column; 
   justify-content: space-between; 
   padding: 20px; 
   z-index: 100; 
-  width: 20%; 
+  width: 35%; 
   background-color: rgba(255, 255, 255, 0.8); 
   align-self: flex-start; 
-  margin-top: 20px; 
-  border-radius: 10px; 
+  border-radius: 20px; 
   align-items: center;
+  flex-wrap: wrap; 
+  margin-left: 20px;
+  margin-top: -200px;
 }
+
 #datos, #mapContainer {
   flex: 1; 
   margin: 5px;
@@ -444,6 +450,8 @@ header {
 
 #datos h2 {
   color: #2a3c5d; 
+  font-weight: bold;
+  font-size: 18px;
   margin-bottom: 10px; 
 }
 
@@ -455,6 +463,7 @@ header {
 #mapContainer h2{
   color: #2a3c5d; 
   margin-bottom: 10px; 
+  font-size:18px;
   font-weight: bold;
 }
 #mapContainer iframe {
@@ -465,112 +474,90 @@ header {
 
 
 #socialContainer {
-  position: absolute; 
-  top: 15%; 
-  right: 10%; 
+  width: 30%; 
   background-color: rgba(255, 255, 255, 0.8); 
-  padding: 5px;
-  border-radius: 5px;
+  margin-right: 20px;
+  margin-top: -200px;
+  border-radius: 20px;
   z-index: 2; 
   overflow: auto;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
 }
+#socialContainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#socialContainer form label {
+  margin-bottom: -10px; 
+}
+
+#socialContainer form input[type="text"],
+#socialContainer form select,
+#socialContainer form textarea {
+  margin-top: 0; 
+}
+#socialContainer label{
+  color: #2a3c5d;
+  font-weight: bold;
+  display: block; 
+  text-align: center; 
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 #socialContainer h4 {
   color: #2a3c5d;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 15px;
   font-size: 20px;
 }
 
-#formContainer {
-  width: 80%;
-  margin: auto;
+#socialContainer input[type="text"],
+#socialContainer select,
+#socialContainer textarea {
+  font-weight: bold;
+  color: #2a3c5d;
   padding: 5px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-#formContainer h4 {
-  text-align: center;
-  color: #6c757d;
-}
-
-#formContainer form {
-  display: flex;
-  flex-direction: column;
-}
-
-#formContainer label {
-  margin-bottom: 2px;
-  color: #6c757d;
-}
-
-#formContainer input[type="text"],
-#formContainer select,
-#formContainer textarea {
-  padding: 5px;
-  margin-bottom: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   border: 1px solid #ced4da;
   border-radius: 5px;
 }
-
-#formContainer input[type="submit"] {
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-}
-
-#formContainer input[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-
 
 .redes a:hover i {
   transform: scale(2);
   color: white; 
 }
-#formContainer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 300px;
-  margin: 0 auto;
-}
-#formContainer h4 {
-  white-space: nowrap;
-}
-#formContainer label {
-  margin: 10px 0 5px 0;
-  color: #2a3c5d;
-  font-weight: bold;
-}
-#formContainer textarea {
-  width: 100%;
-  height: 200px; 
-}
-#formContainer input[type="text"],
-#formContainer textarea {
+#socialContainer textarea {
+  width: 100%; 
+  height: 60px; 
   display: block; 
-  margin: 10px auto; 
-  border-radius: 5px;
-  border: 1px solid #ccc; 
-  padding: 10px; 
+  margin-left: auto; 
+  margin-right: auto;
+ 
 }
-#formContainer input[type="submit"] {
+#socialContainer input[type="submit"] {
   background-color: #4CAF50; 
   color: white; 
   border: none; 
   cursor: pointer; 
   padding: 10px 20px; 
   border-radius: 5px; 
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
-#formContainer input[type="submit"]:hover {
-  background-color: #45a049;
+#socialContainer input[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
 #socialContainer .redes{
@@ -583,6 +570,10 @@ header {
 }
 #socialLinks{
   margin-bottom: 20px;
+}
+#socialLinks h4{
+  font-size: 18px;
+  font-weight: bold;
 }
 #socialContainer .facebook-icon,
 #socialContainer .instagram-icon,
@@ -634,6 +625,10 @@ header {
   margin-bottom: 100px;
   margin-left: 12%;
 }
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
 
 .title, .description, .nosotros-profesional {
   opacity: 0;
@@ -674,16 +669,15 @@ header {
 .profesional:hover {
   background-color: #2a3c5d; 
 }
-
+.profesional:hover .card-img {
+  transform: scale(1.3); 
+}
 .profesional:hover .card-title,
 .profesional:hover .card-subtitle,
 .profesional:hover .card-text {
   color: white; 
 }
 
-.profesional:hover .card-img {
-  transform: scale(1.3); 
-}
 .card-img {
   border-radius: 50%;
   width: 100px; 
@@ -691,9 +685,7 @@ header {
   object-fit: cover; 
   transition: transform 0.3s ease;
 }
-.nosotros-profesional:hover .card-img {
-  transform: scale(2);
-}
+
 .card-title{
   padding: 10px;
   color: #2a3c5d;
@@ -723,23 +715,24 @@ header {
   background-color: rgba(255, 255, 255, 0.7);
   max-width: 1200px;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
   text-align: center;
+  border-radius: 20px;
 }
 
 #main-container h1 {
-  
-  color: #2a3c5d; /* Título en color azul */
+  margin-bottom: 30px;
+  color: #2a3c5d; 
 }
 
 .carousel img {
   width: 300px;
   height: 200px;
   object-fit: cover;
-  margin: 0 10px; /* Agrega un margen a las imágenes */
+  margin: 0 10px; 
 }
 
 .text-container {
@@ -747,3 +740,163 @@ header {
   color: #2a3c5d; 
   font-weight: bold                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
 }
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: #2a3c5d;
+}
+
+
+/* -------------------Seccion ORTOPEDIA----------- */
+
+#ortopedia-body {
+  background-image: url('/images/ortopedia3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+#main-container-ortopedia {
+  background-color: rgba(255, 255, 255, 0.7);
+  max-width: 1200px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#main-container h1 {
+  margin-bottom: 30px;
+  color: #2a3c5d; 
+}
+
+.carousel img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin: 0 10px; 
+}
+
+.text-container {
+  margin-top: 30px;
+  color: #2a3c5d; 
+  font-weight: bold                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
+}
+
+
+/*-------------MEDIA QUERYS RESPONSIVE--------*/
+@media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo-container {
+    text-align: center;
+  }
+
+  .icons-header {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: auto; 
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 20px;
+  }
+
+  .icons-header a {
+    display: block;
+    padding: 10px;
+    color: #2a3c5d;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+  }
+  .icons-header.show {
+    display: flex;
+    opacity: 1; 
+  }
+  .icons-header a:hover {
+    background-color: #2a3c5d; 
+    color: #f5f5f5; 
+  }
+
+
+  .hamburger-menu {
+    display: block;
+  } 
+  
+  .servicios-container .servicios {
+    grid-template-columns: repeat(1, 1fr); /* Cambia esto */
+  }
+  #myVideoFooter {
+    height: 300vh; 
+  }
+  #socialContainer {
+    width: 90%; 
+    padding: 0 5%; 
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px; 
+    overflow: auto; 
+  }
+  #socialContainer a {
+    margin: 0 10px; /* Reducir el margen en pantallas pequeñas */
+  }
+  #container-contacto {
+    width: 90%; 
+    padding: 0 5%; 
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 300px; 
+  }
+  /*---------seccion nosotros responsive-----------*/
+  .description {
+    display: none; /* Ocultar el texto en dispositivos pequeños */
+  }
+
+  .card-container {
+    grid-template-columns: repeat(1, 1fr); /* Cambiar la disposición de la cuadrícula a una sola columna */
+  }
+
+  #doctorsSectionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    padding: 20px; 
+    width: 90%; 
+    padding: 0 5%; 
+    margin-right: auto;
+    margin-left: auto;
+  } 
+  /*--------Seccion Kinesiologia-----*/
+  #main-container {
+    margin-top: 60px;
+    max-width: 90%; /* Ajustar el ancho máximo */
+    padding: 10px; /* Reducir el padding */
+  }
+}
+
+
+

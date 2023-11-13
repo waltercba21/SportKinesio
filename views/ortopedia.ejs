@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <%- include partials/head %> 
+  </head>
+  
+  <body id="ortopedia-body">
+    <header>
+      <%- include partials/header %>
+    </header>
+  
+    <div id="main-container-ortopedia">
+      <h1>Kinesiología y Fisioterapia</h1>
+  
+      <div class="carousel">
+        <div><img src="/images/ortopedia.jpg" alt="Imagen 2"></div>
+        <div><img src="/images/ortopedia2.jpg" alt="Imagen 3"></div>
+        <div><img src="/images/ortopedia3.jpg" alt="Imagen 4"></div>
+        <div><img src="/images/ortopedia4.jpg" alt="Imagen 5"></div>
+        <div><img src="/images/ortopedia5.jpg" alt="Imagen 6"></div>
+        
+      </div>
+  
+      <div class="text-container">
+        <p>Profesionales en kinesiología, fisioterapia, deportología y osteopatía, nos dedicamos a su bienestar en salud. Con enfoque en dedicación, responsabilidad y honestidad, ofrecemos atención cercana y profesional en nuestro consultorio. Estamos aquí para ayudarles a alcanzar sus objetivos, brindándoles el mejor cuidado posible.</p>
+        <a href="/#socialContainer" class="btn">PEDIR TURNO</a>
+      </div>
+    </div>
+    <script>
+     $(document).ready(function(){
+  $('.carousel').slick({
+    infinite: true,
+    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    speed: 2000,
+    centerMode: true,
+  });
+});
+    </script>
+  </body>
+</html>
