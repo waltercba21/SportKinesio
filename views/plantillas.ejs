@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <%- include partials/head %> 
+  </head>
+  
+  <body id="plantillas-body">
+    <header>
+      <%- include partials/header %>
+    </header>
+  
+    <div id="main-container-plantillas">
+      <h1>Plantillas y Estudio de Pisada</h1>
+  
+      <div class="carousel">
+        <div><img src="/images/plantillas.jpg" alt="Imagen 2"></div>
+        <div><img src="/images/plantillas2.jpg" alt="Imagen 3"></div>
+        <div><img src="/images/plantillas3.jpeg" alt="Imagen 4"></div>
+        <div><img src="/images/plantillas4.jpg" alt="Imagen 5"></div>
+        <div><img src="/images/plantillas5.jpeg" alt="Imagen 6"></div>
+        
+      </div>
+  
+      <div class="text-container">
+        <p>¡En nuestra ortopedia, no solo vendemos productos, también cuidamos de tu comodidad desde la cabeza hasta los pies! Realizamos estudios posturales y de la pisada para recomendarte las mejores plantillas ortopédicas personalizadas. ¡Da pasos más saludables y felices en la vida con SportKinesio!</p>
+        <a href="/#socialContainer" class="btn">PEDIR TURNO</a>
+      </div>
+    </div>
+    <script>
+     $(document).ready(function(){
+  $('.carousel').slick({
+    infinite: true,
+    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    speed: 2000,
+    centerMode: true,
+  });
+});
+    </script>
+  </body>
+</html>

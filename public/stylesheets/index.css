@@ -129,23 +129,23 @@ header {
 
 #videoText {
   position: absolute; 
-  top: 30%; /* Este es el punto en el que el texto comenzará a moverse con el scroll */
-  left: 2%; /* Ajusta según sea necesario */
+  top: 25%; 
+  left: 2%; 
   z-index: 1;
-  width: 70%; /* Asegura que #videoText ocupe la mayor parte del ancho de la pantalla */
+  width: 70%; 
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinea los elementos hijos a la izquierda */
+  align-items: flex-start; 
 }
 
 #firstPart, #lastPart {
   color: white;
-  opacity: 0; /* Inicia el texto invisible */
-  animation: fadeIn 2s ease-in forwards; /* Aplica la animación a fadeIn */
+  opacity: 0; 
+  animation: fadeIn 2s ease-in forwards;
 }
 
 #firstPart {
-  color: white; /* Cambia el color del primer texto a blanco */
+  color: white; 
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -287,7 +287,7 @@ header {
   color: #2a3c5d;
 }
 .tarjeta-servicio .masInfo {
-  margin-top: auto; /* Empujar el botón hacia abajo */
+  margin-top: auto; 
   display: flex;
   justify-content: center; 
 }
@@ -322,14 +322,14 @@ header {
 
 /*--------------CONTAINER OBRAS SOCIALES INDEX------------*/
 
-.obras-sociales-container {
+#obras-sociales-container {
   position: relative;
   z-index: 10;
   margin-top: 120px;
   background-color: #f5f5f5;
   padding-bottom: 100px; 
 }
-.obras-sociales-container::before {
+#obras-sociales-container::before {
   content: "";
   position: absolute;
   top: -100px; 
@@ -340,7 +340,7 @@ header {
   transform-origin: top left;
   z-index: -1 ;
 }
-.obras-sociales-container h1 {
+#obras-sociales-container h1 {
   color: #2a3c5d;
   text-align: center;
   margin-top: 60px;
@@ -367,7 +367,7 @@ header {
 #videoContainerFooter {
   position: relative;
   width: 100%;
-  height: 200vh;
+  height: 150vh;
   z-index: 1; 
   display: flex;
   justify-content: space-between;
@@ -385,7 +385,7 @@ header {
 }
 #videoTextFooter{
   position: relative; 
-  top: 15%; 
+  top: 10%; 
   left: 5%; 
   z-index: 1;
   width: 100%; 
@@ -431,14 +431,14 @@ header {
   justify-content: space-between; 
   padding: 20px; 
   z-index: 100; 
-  width: 35%; 
+  width: 25%; 
   background-color: rgba(255, 255, 255, 0.8); 
   align-self: flex-start; 
   border-radius: 20px; 
   align-items: center;
   flex-wrap: wrap; 
   margin-left: 20px;
-  margin-top: -200px;
+  margin-top: 10%;
 }
 
 #datos, #mapContainer {
@@ -477,7 +477,7 @@ header {
   width: 30%; 
   background-color: rgba(255, 255, 255, 0.8); 
   margin-right: 20px;
-  margin-top: -200px;
+  margin-top: 10%;
   border-radius: 20px;
   z-index: 2; 
   overflow: auto;
@@ -538,7 +538,7 @@ header {
 }
 #socialContainer textarea {
   width: 100%; 
-  height: 60px; 
+  height: 100px; 
   display: block; 
   margin-left: auto; 
   margin-right: auto;
@@ -603,7 +603,7 @@ header {
 /*BODY NOSOTROS*/
 #nosotros {
   position: relative;
-  background-image: url('/images/nosotros.jpg');
+  background-image: url('/images/r31.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -704,7 +704,7 @@ header {
 /* -------------------Seccion Kinesiologia- Fisioterapia----------- */
 
 #kinesiologia-body {
-  background-image: url('/images/fisioterapia.jpg');
+  background-image: url('/images/r31.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -761,7 +761,7 @@ header {
 /* -------------------Seccion ORTOPEDIA----------- */
 
 #ortopedia-body {
-  background-image: url('/images/ortopedia3.jpg');
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('/images/r31.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -780,7 +780,7 @@ header {
   border-radius: 20px;
 }
 
-#main-container h1 {
+#main-container-ortopedia h1 {
   margin-bottom: 30px;
   color: #2a3c5d; 
 }
@@ -798,6 +798,32 @@ header {
   font-weight: bold                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
 }
 
+/*--------------------- SECCION PLANTILLAS---------------*/
+
+#plantillas-body {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('/images/r31.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+#main-container-plantillas {
+  background-color: rgba(255, 255, 255, 0.7);
+  max-width: 1200px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#main-container-plantillas h1 {
+  margin-bottom: 30px;
+  color: #2a3c5d; 
+}
 
 /*-------------MEDIA QUERYS RESPONSIVE--------*/
 @media (max-width: 768px) {
